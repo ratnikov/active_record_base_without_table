@@ -2,9 +2,8 @@ module ActiveRecord
   class BaseWithoutTable < Base
     self.abstract_class = true
     
-    def create_or_update_without_callbacks
-      errors.empty?
-    end
+    def create; errors.empty? end
+    def update; errors.empty? end
     
     class << self
       def columns()
